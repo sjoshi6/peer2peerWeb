@@ -7,27 +7,27 @@ block content
 		div.jumbotron
 			form.form-horizontal(action='/v1/visitor', method='post')
 
-				h3.h3(style="text-align: center") Please leave your details here
+				h4.h4(style="text-align: center") Please leave your details here
 				br
 
 				div.form-group
 					label(for="firstname", class="control-label col-sm-4")  First Name
-					div.col-sm-6
+					div.col-sm-4
 						input(type="text", name="firstname", placeholder="First Name" class="form-control")
 
 				div.form-group
 					label(for="lastname", class="control-label col-sm-4") Last Name
-					div.col-sm-6                    
+					div.col-sm-4                    
 						input(type="text", name="lastname", placeholder="Last Name" class="form-control")
 
 				div.form-group
 					label(for="email", class="control-label col-sm-4") Email
-					div.col-sm-6                         
+					div.col-sm-4                         
 						input(type="text", name="email", placeholder="Email address" class="form-control")
 
 				div.form-group
 					label(for="age", class="control-label col-sm-4") Age
-					div.col-sm-6                         
+					div.col-sm-4                         
 						input(type="number", name="age", placeholder="22", min="15" class="form-control")
 
 				div.form-group
@@ -42,12 +42,12 @@ block content
 
 				div.form-group
 					label(for="university", class="control-label col-sm-4") University
-					div.col-sm-6   
+					div.col-sm-4   
 						input(type="text", name="university", placeholder="Mumbai University" class="form-control")
 
 				div.form-group
 					label(for="phonenumber", class="control-label col-sm-4") Phone Number
-					div.col-sm-6                 
+					div.col-sm-4                 
 						input.input-block-level(type="text", name="phonenumber", class="form-control")
 
 				div.form-group(style="text-align:center;")                  
