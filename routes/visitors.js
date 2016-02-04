@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/visitor', function(req, res, next) {
 
-    res.render('visitor', {visitor_message: 'Welcome Visitor !'})
+    res.render('visitor')
 });
 
 router.post('/visitor', function(req, res, next) {
