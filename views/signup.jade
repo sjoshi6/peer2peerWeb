@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	br
+	div.container
+		div.jumbotron
+			form.form-horizontal(action='/v1/signup', method='post')
+
+				div(style="font-family:lucida grande,tahoma,verdana,arial,sans-serif;")
+					h3.h3(style="text-align: center") Create Account
+				br
+				div.form-group
+					label(for="username", class="control-label col-sm-4")  UserName
+					div.col-sm-4
+						input(type="text", name="username", placeholder="spai55" class="form-control")
+
+				div.form-group
+					label(for="email", class="control-label col-sm-4") Email
+					div.col-sm-4                    
+						input(type="text", name="email", placeholder="subraip@yahoo.com" class="form-control")
+
+				div.form-group
+					label(for="password", class="control-label col-sm-4") Password
+					div.col-sm-4                         
+						input(type="password", name="password", class="form-control")
+
+				div.form-group
+					label(for="cpassword", class="control-label col-sm-4") Confirm Password
+					div.col-sm-4                         
+						input(type="password", name="cpassword",  class="form-control")
+
+				br
+				div.form-group(style="text-align:center;")                  
+					button.btn.btn-large.btn-primary(type="submit")
+						span(class="glyphicon glyphicon-log-in")   SignUp
