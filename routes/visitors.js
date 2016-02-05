@@ -1,6 +1,7 @@
 var express = require('express');
 var needle = require('needle');
 
+var config = require('../config/session.js')
 var router = express.Router();
 
 /* GET users listing. */
@@ -23,7 +24,9 @@ router.post('/visitor', function(req, res, next) {
 
     visitor_str = JSON.stringify(visitor_obj)
 
-    needle.post('http://localhost:8000/v1/visitor', visitor_str,
+    server_addr = config.APIServerAddress
+
+    needle.post(server_addr+'/v1/visitor', visitor_str,
         function(err, resp, body){
 
             console.log(body);

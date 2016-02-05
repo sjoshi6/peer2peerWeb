@@ -4,10 +4,10 @@ block content
 	br
 	div.container
 		div.jumbotron
-			form.form-horizontal(action='/v1/signup', method='post')
+			form.form-horizontal(action='/v1/login', method='post')
 
 				div(style="font-family:lucida grande,tahoma,verdana,arial,sans-serif;")
-					h3.h3(style="text-align: center") Create Account
+					h3.h3(style="text-align: center") Login
 				br
 
 				div.form-group
@@ -20,15 +20,10 @@ block content
 					div.col-sm-4                         
 						input(type="password", name="password", class="form-control" required minlength=6)
 
-				div.form-group
-					label(for="cpassword", class="control-label col-sm-4") Confirm Password
-					div.col-sm-4                         
-						input(type="password", name="cpassword",  class="form-control" required minlength=6)
-
 				br
 				div.form-group(style="text-align:center;")                  
 					button.btn.btn-large.btn-primary(type="submit")
-						span(class="glyphicon glyphicon-log-in")   SignUp
+						span(class="glyphicon glyphicon-log-in")   Login
 
 	h4.h4(style="text-align:center")
 		span(class="label label-warning") #{flash_msg}
