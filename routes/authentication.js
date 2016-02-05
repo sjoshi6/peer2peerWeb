@@ -30,6 +30,14 @@ router.get('/login', function(req, res, next) {
     })
 })
 
+// logout of the application & clear session
+router.get("/logout", function(req, res) {
+
+	delete req.session.token;
+    delete req.session.auth;
+	res.redirect("/");
+
+});
 
 // POST A signup request to backend API
 router.post('/signup', function(req, res, next) {
@@ -56,7 +64,12 @@ router.post('/signup', function(req, res, next) {
             console.log(body);
 
             if (!err && resp.statusCode == 200) {
-                res.render('profile')
+
+                // Assign the token to the current user session & set auth to true
+                req.session.token = body
+                req.session.auth = true
+
+                res.redirect('/v1/profile')
 
             } else {
                 res.render('error')
@@ -86,7 +99,11 @@ router.post('/login', function(req, res, next) {
 
             if (!err && resp.statusCode == 200) {
 
-                res.render('profile')
+                // Assign the token to the current user session & set auth to true
+                req.session.token = body
+                req.session.auth = true
+
+                res.redirect('/v1/profile')
 
             } else if (!err && (resp.statusCode == 400 || resp.statusCode == 500)) {
 
@@ -94,6 +111,7 @@ router.post('/login', function(req, res, next) {
                 res.redirect('/v1/login')
 
             } else {
+
                 res.render('error')
             }
 

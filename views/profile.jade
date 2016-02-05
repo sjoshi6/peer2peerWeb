@@ -1,4 +1,15 @@
-extends layout
+extends authenticated_layout
 
 block content
-    h2.h2 Hey User !
+	div(style="font-family:lucida grande,tahoma,verdana,arial,sans-serif;")
+
+		br
+		h4.h4(style="text-align:center") Welcome Logged In User !
+		br
+		div.container
+			div.jumbotron
+				p This sesstion token is: 
+				p(style="font-size:10px") #{token}
+
+	h4.h4(style="text-align:center")
+		span(class="label label-warning") #{flash_msg}

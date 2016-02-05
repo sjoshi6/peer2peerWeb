@@ -1,0 +1,15 @@
+doctype html
+html(lang='EN')
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+	body
+		ul(class="nav nav-tabs nav-justified")
+			li
+				a(href="/v1/profile") Home
+			li
+				a(href="/v1/logout") Logout
+
+		h2.h2(style="text-align:center") peer2peer Mentoring
+		block content
