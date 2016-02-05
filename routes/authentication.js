@@ -46,6 +46,7 @@ router.post('/signup', function(req, res, next) {
         email: req.body.email,
         password: req.body.password,
         cpassword: req.body.cpassword,
+        admintoken: req.body.admintoken,
     }
 
     if (sign_up_obj.password != sign_up_obj.cpassword) {
@@ -71,7 +72,18 @@ router.post('/signup', function(req, res, next) {
 
                 res.redirect('/v1/profile')
 
-            } else {
+            } else if(!err && resp.statusCode == 403) {
+
+                req.flash('error', 'The admintoken you provided is Incorrect')
+                res.redirect('/v1/signup')
+
+            } else if (!err && resp.statusCode == 500) {
+
+                req.flash('error', 'The email is already registered')
+                res.redirect('/v1/signup')
+
+            }else {
+
                 res.render('error')
             }
 

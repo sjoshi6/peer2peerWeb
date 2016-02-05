@@ -1,0 +1,24 @@
+extends authenticated_layout 
+
+block content
+	div(style="font-family:lucida grande,tahoma,verdana,arial,sans-serif;")
+
+		br
+		h4.h4(style="text-align:center") Visitors Data
+		br
+		div.container
+			table.table-striped(style="width:100%")
+				thead
+				each col in table_cols
+					th(style="padding:10px") #{col}
+				each row in data
+					tr(style="margin:10px")
+						td(style="padding:10px") #{row.id}
+						td(style="padding:10px") #{row.firstname}
+						td(style="padding:10px") #{row.lastname}
+						td(style="padding:10px") #{row.age}
+						td(style="padding:10px") #{row.gender}
+						td(style="padding:10px") #{row.email}
+						td(style="padding:10px") #{row.phonenumber}
+						td(style="padding:10px") #{row.university}
+						td(style="padding:10px") #{row.creationtime}

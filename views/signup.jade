@@ -7,7 +7,8 @@ block content
 			form.form-horizontal(action='/v1/signup', method='post')
 
 				div(style="font-family:lucida grande,tahoma,verdana,arial,sans-serif;")
-					h3.h3(style="text-align: center") Create Account
+					h3.h3(style="text-align: center")
+						span(class="glyphicon glyphicon-user")  Create Account
 				br
 
 				div.form-group
@@ -24,6 +25,11 @@ block content
 					label(for="cpassword", class="control-label col-sm-4") Confirm Password
 					div.col-sm-4                         
 						input(type="password", name="cpassword",  class="form-control" required minlength=6)
+
+				div.form-group
+					label(for="admintoken", class="control-label col-sm-4") Admin Token
+					div.col-sm-4                         
+						input(type="password", name="admintoken",  class="form-control" required minlength=6)
 
 				br
 				div.form-group(style="text-align:center;")                  
